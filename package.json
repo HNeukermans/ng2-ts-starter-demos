@@ -1,8 +1,16 @@
 {
-    "name": "typescript_starter",
-    "scripts": {
-        "compile": "tsc -w",
-        "serve": "http-server -c-1",
-        "serve-lite": "lite-server"
-    }
+  "name": "typescript_starter",
+  "scripts": {
+    "compile": "tsc -w",
+    "serve": "http-server -c-1",
+    "serve-lite": "lite-server"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^2.5.38",
+    "concurrently": "3.1.0",
+    "es6-shim": "^0.35.2",
+    "jasmine-core": "2.5.2",
+    "live-server": "1.1.0",
+    "systemjs": "^0.19.41"
+  }  
 }

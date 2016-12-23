@@ -1,16 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
+    <title>testing ng2 apps with jasmine</title>
+    <link rel="shortcut icon" type="image/png" href="/node_modules/jasmine-core/lib/jasmine-core/jasmine_favicon.png">
+    <link rel="stylesheet" href="/node_modules/jasmine-core/lib/jasmine-core/jasmine.css">
+</head>
+
+<body>
+    <!--<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.2/jasmine.css" />
+    <script src="https://unpkg.com/core-js/client/shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.2/jasmine.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.2/jasmine-html.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.2/boot.js"></script>
+    <script src="/node_modules/systemjs/dist/system-polyfills.js"></script>
+    <script src="/node_modules/systemjs/dist/system.src.js"></script>-->
+    <!--<script src="/dist/main.spec.1.js"></script>-->
     <script src="https://unpkg.com/core-js/client/shim.min.js"></script>
     <script src="https://unpkg.com/zone.js@0.7.4?main=browser"></script>
     <script src="https://unpkg.com/reflect-metadata@0.1.8"></script>
     <script src="https://unpkg.com/systemjs@0.19.39/dist/system.src.js"></script>
-</head>
 
-<body>
     <script>
         System.config({
             packages: {
@@ -39,12 +48,13 @@
             'rxjs': 'npm:rxjs',
             }
         });
-        System.import('dist/main')
+        System.import('dist/main.spec')
+            //.then(console.log('finished'))
+            .then(function() { window.onload(); })
             .catch(console.error.bind(console));
  
 
     </script>
-    <my-app>loading</my-app>
 </body>
 
 </html>
