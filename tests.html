@@ -4,34 +4,48 @@
     <title>testing ng2 apps with jasmine</title>
     <link rel="shortcut icon" type="image/png" href="/node_modules/jasmine-core/lib/jasmine-core/jasmine_favicon.png">
     <link rel="stylesheet" href="/node_modules/jasmine-core/lib/jasmine-core/jasmine.css">
-    <!-- Jasmine Scripts -->
-    <!-- Common dependencies for ng2 -->
-    <!--<script src="/node_modules/es6-shim/es6-shim.min.js"></script>
-    <script src="/node_modules/systemjs/dist/system-polyfills.js"></script>
-    <script src="/node_modules/angular2/bundles/angular2-polyfills.js"></script>
-    
-    <script src="/node_modules/rxjs/bundles/Rx.js"></script>
-    <script src="/node_modules/angular2/bundles/angular2.dev.js"></script>
-    <script src="/node_modules/angular2/bundles/router.js"></script>-->
-    <!-- Import ng2 testing -->
-    <!--<script src="/node_modules/angular2/bundles/testing.dev.js"></script>-->
 </head>
 
 <body>
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.2/jasmine.css" />
+    <!--<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.2/jasmine.css" />
     <script src="https://unpkg.com/core-js/client/shim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.2/jasmine.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.2/jasmine-html.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.2/boot.js"></script>
     <script src="/node_modules/systemjs/dist/system-polyfills.js"></script>
-    <script src="/node_modules/systemjs/dist/system.src.js"></script>
+    <script src="/node_modules/systemjs/dist/system.src.js"></script>-->
     <!--<script src="/dist/main.spec.1.js"></script>-->
+    <script src="https://unpkg.com/core-js/client/shim.min.js"></script>
+    <script src="https://unpkg.com/zone.js@0.7.4?main=browser"></script>
+    <script src="https://unpkg.com/reflect-metadata@0.1.8"></script>
+    <script src="https://unpkg.com/systemjs@0.19.39/dist/system.src.js"></script>
+
     <script>
-            System.config({
+        System.config({
             packages: {
                 'dist': {
                     defaultExtension: 'js'
                 }
+            },
+            paths: {
+            // paths serve as alias
+            'npm:': 'https://unpkg.com/'
+        },
+        // map tells the System loader where to look for things
+        map: {
+            // our app is within the app folder
+            app: 'app',
+            // angular bundles
+            '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
+            '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
+            '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
+            '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
+            '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
+            '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
+            '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
+            '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
+            // other libraries
+            'rxjs': 'npm:rxjs',
             }
         });
         System.import('dist/main.spec')

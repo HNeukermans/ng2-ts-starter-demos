@@ -12,5 +12,5 @@
     "jasmine-core": "2.5.2",
     "live-server": "1.1.0",
     "systemjs": "^0.19.41"
-  }
+  }  
 }

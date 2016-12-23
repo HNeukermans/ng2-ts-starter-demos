@@ -5,14 +5,10 @@
     else if (typeof define === 'function' && define.amd) {
         define(dependencies, factory);
     }
-})(["require", "exports"], function (require, exports) {
+})(["require", "exports", "@angular/platform-browser-dynamic", "./module"], function (require, exports) {
     "use strict";
-    var Main = (function () {
-        function Main() {
-            console.log('Main');
-        }
-        return Main;
-    }());
-    exports.Main = Main;
+    var platform_browser_dynamic_1 = require("@angular/platform-browser-dynamic");
+    var module_1 = require("./module");
+    platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(module_1.AppModule);
 });
 //new Main(); 
