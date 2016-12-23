@@ -1,7 +1,7 @@
-class Main {
+export class Main {
     constructor() {
         console.log('Main');
     }
 }
 
-new Main();
+//new Main();
